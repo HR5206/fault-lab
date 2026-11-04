@@ -1,0 +1,57 @@
+{
+  "name": "slow-after-recovery",
+  "description": "Fail twice, recover immediately, then slow down. Useful for testing a client deadline.",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "steps": [
+        {
+          "status": 503,
+          "body": {
+            "state": "DOWN"
+          }
+        },
+        {
+          "status": 503,
+          "body": {
+            "state": "DOWN"
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "state": "UP"
+          }
+        },
+        {
+          "status": 200,
+          "delayMs": 1200,
+          "body": {
+            "state": "UP",
+            "note": "slow tail"
+          }
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/jobs",
+      "steps": [
+        {
+          "status": 503,
+          "body": {
+            "accepted": false
+          }
+        },
+        {
+          "status": 202,
+          "body": {
+            "accepted": true,
+            "fixture": "sample job"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "fault-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Replayable HTTP failures for testing timeouts, retries and recovery.",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "start": "node src/cli.mts serve",
+    "lab": "node src/cli.mts",
+    "demo": "node scripts/pulseforge.mts",
+    "test": "node --test test/fault-lab.test.mts",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6",
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  }
+}

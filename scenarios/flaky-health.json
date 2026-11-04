@@ -1,0 +1,53 @@
+{
+  "name": "flaky-health",
+  "description": "Two failures, a slow recovery, then healthy responses.",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "steps": [
+        {
+          "status": 503,
+          "body": {
+            "state": "DOWN",
+            "reason": "warming up"
+          }
+        },
+        {
+          "status": 503,
+          "body": {
+            "state": "DOWN",
+            "reason": "still warming up"
+          }
+        },
+        {
+          "status": 200,
+          "delayMs": 2000,
+          "body": {
+            "state": "UP",
+            "note": "slow recovery"
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "state": "UP"
+          }
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/version",
+      "steps": [
+        {
+          "status": 200,
+          "body": {
+            "service": "sample-api",
+            "version": 1
+          }
+        }
+      ]
+    }
+  ]
+}

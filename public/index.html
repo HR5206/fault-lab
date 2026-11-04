@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fault Lab · request log</title><link rel="icon" href="/_lab/assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/_lab/assets/desk.css"><script type="module" src="/_lab/assets/desk.js"></script>
+</head>
+<body>
+<header><div class="wrap top"><span>FL / Developer tools</span><span>HTTP test bench</span></div></header>
+<main class="wrap">
+  <div class="mast"><div><p class="kicker">REQUEST INSPECTOR</p><h1>Fault Lab<span>.</span></h1></div><span id="connection">Connecting…</span></div>
+  <p class="lead">Give a client the same bad day twice.</p>
+  <section class="bench" aria-label="Scenario controls">
+    <div class="recipe"><p class="kicker">CURRENT SCENARIO</p><h2 id="active">Loading…</h2>
+      <p id="description"></p><div id="sequence" aria-label="Configured response sequences"></div></div>
+    <div class="controls">
+      <label for="scenario">Scenario to start</label>
+      <div class="pair"><select id="scenario"></select><button id="reset" type="button">Start fresh run</button></div>
+      <label id="token-label" for="token" hidden>Admin token (reset only)</label><input id="token" type="password" autocomplete="off" hidden>
+      <label for="route">Test endpoint</label>
+      <div class="pair"><select id="route"></select><button id="probe" type="button">Send once</button></div>
+      <p id="message" role="status">A fresh run starts each endpoint at hit 1.</p>
+    </div>
+  </section>
+  <section class="journal" aria-labelledby="journal-title">
+    <div class="journal-head"><div><p class="kicker">OBSERVATIONS</p><h2 id="journal-title">Request log</h2></div><p id="run"></p></div>
+    <div class="table-wrap"><table><caption class="sr">Most recent fixture requests, newest arrival first.</caption><thead><tr>
+      <th>ID</th><th>Run</th><th>Endpoint</th><th>Hit / step</th><th>Planned</th><th>Outcome</th><th>Elapsed</th>
+    </tr></thead><tbody id="rows"></tbody></table></div>
+    <p class="foot">Last 200 accepted fixture requests · Newest arrival first · “Sent” means the server finished writing.</p>
+  </section>
+</main>
+<footer><div class="wrap">Fault Lab / in-memory edition <span>FL–01</span></div></footer>
+</body></html>

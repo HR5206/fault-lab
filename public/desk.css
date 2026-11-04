@@ -1,0 +1,21 @@
+:root { color-scheme:light; --paper:#f3efe5; --ink:#252d29; --muted:#535e55; --line:#a7ada0; --dark:#23372d; --clay:#9d4a33; }
+* {box-sizing:border-box} body {margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+.wrap {max-width:1100px;width:calc(100% - 3rem);margin-inline:auto}
+header {background:var(--dark);color:#edf0de;border-bottom:3px solid #9eaa83}
+.top,footer div {display:flex;justify-content:space-between;gap:1rem;padding-block:.7rem;font:12px/1.5 ui-monospace,monospace}
+main {padding:2.7rem 0 3rem}.mast,.journal-head {display:flex;align-items:end;justify-content:space-between;gap:1rem}
+h1,h2,p {margin:0}h1 {font:clamp(3rem,8vw,5.2rem)/1 Georgia,serif;letter-spacing:-.055em}h1 span {color:var(--clay)}
+h2 {font:clamp(1.5rem,3vw,2.2rem)/1.18 Georgia,serif;overflow-wrap:anywhere}.lead {margin:.6rem 0 1.7rem;color:var(--muted)}
+.kicker,label,.foot,#connection,#run,#message {font:12px/1.5 ui-monospace,monospace}.kicker {color:var(--clay);letter-spacing:.12em;margin-bottom:.4rem}
+#connection {padding:2px 9px;border:1px solid var(--line)}.bench {display:grid;grid-template-columns:1.15fr 1fr;border-block:1px solid var(--ink)}
+.recipe,.controls {padding:1.15rem 1.3rem}.recipe {padding-left:0;border-right:1px solid var(--line)}
+#description {margin:.5rem 0 .8rem;color:var(--muted)}.route-plan {font:12px/1.65 ui-monospace,monospace;margin-top:.5rem}
+.route-plan strong {display:block}.controls {padding-right:0}.pair {display:flex;gap:.45rem;margin:.2rem 0 .7rem}
+label {display:block;color:var(--muted)}select,input,button {font:13px/1.5 ui-monospace,monospace;padding:.43rem .6rem;border:1px solid var(--line);border-radius:0}
+select,input {color:var(--ink);background:#faf8f2;min-width:0}.pair select {flex:1}button {background:var(--dark);color:white;border-color:var(--dark);cursor:pointer}button:hover {background:#354e40}
+:focus-visible {outline:3px solid #ba702a;outline-offset:2px}#message {min-height:1.5em;color:var(--muted)}#token {width:100%;margin:.2rem 0 .65rem}[hidden] {display:none!important}
+.journal {margin-top:2rem}.journal-head {margin-bottom:.65rem}#run,.foot {color:var(--muted)}.table-wrap {overflow:auto;border-block:1px solid var(--ink)}
+table {border-collapse:collapse;width:100%;font:13px/1.5 ui-monospace,monospace}th,td {padding:.6rem .5rem;text-align:left;white-space:nowrap}th {font-weight:600;background:#e3e6d9}
+td {border-top:1px solid #c8cbbf}.bad {color:#99402e}.good {color:#315940}.foot {margin-top:.5rem}footer {border-top:1px solid var(--line);color:var(--muted)}
+.sr {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:700px) {.wrap {width:calc(100% - 2rem)}main {padding-top:1.5rem}.bench {grid-template-columns:1fr}.recipe {border:0;border-bottom:1px solid var(--line)}.recipe,.controls {padding:1rem 0}.mast,.journal-head {align-items:center}.top {font-size:11px}}
