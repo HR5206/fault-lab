@@ -6,9 +6,9 @@ The question behind the default example is simple: **what happens if request thr
 
 ## Run it
 
-Use a recent **Node 24 LTS (24.12 or newer)** or **Node 26 LTS** and npm. I use Node's native TypeScript execution; there is no build step for the server. The lockfile pins the Express dependencies.
+Use a recent **Node 24 LTS (24.12 or newer)** and npm. I use Node's native TypeScript execution; there is no build step for the server. The lockfile pins the Express dependencies.
 
-Open the extracted `fault-lab` folder (the one containing `package.json`) in VS Code. In **Terminal → New Terminal**, run:
+Clone `https://github.com/HR5206/fault-lab.git` and open the `fault-lab` folder (the one containing `package.json`) in VS Code. In **Terminal → New Terminal**, run:
 
 ~~~sh
 npm ci
@@ -130,3 +130,7 @@ One process runs one active scenario. There are no accounts or database. The mos
 
 
 Fault injection with specified delays has useful precedent in [WireMock's fault-simulation documentation](https://wiremock.org/docs/simulating-faults/). Fault Lab is a separate small implementation.
+
+## Sharing a demo
+
+My local demo is the repeatable reference. A small public instance can help someone explore the request log, but every visitor shares the same counters. See [DEPLOYMENT.md](DEPLOYMENT.md) for the process settings and verification steps. I do not treat a hosted flaky endpoint as a stable uptime target.
